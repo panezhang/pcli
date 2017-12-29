@@ -1,5 +1,5 @@
 {
-  "name": "pcli",
+  "name": "@panezhang/cli",
   "version": "0.0.1",
   "description": "This repo holds my favorite cli tools.",
   "repository": {
@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/panezhang/pcli#readme",
   "dependencies": {
+    "chalk": "2.3.0",
     "commander": "2.12.2",
     "typescript": "2.6.2"
   },
@@ -32,10 +33,16 @@
     "eslint-config-airbnb": "16.1.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
-    "eslint-plugin-react": "7.5.1"
+    "eslint-plugin-react": "7.5.1",
+    "rollup": "0.53.1",
+    "rollup-plugin-json": "2.3.0"
+  },
+  "bin": {
+    "pcli": "bin/pcli",
+    "pcli-hello": "bin/pcli-hello"
   },
   "scripts": {
-    "start": "babel-node src/pcli",
-    "lint": "eslint src"
+    "start": "rollup -c rollup.config.js -w",
+    "lint": "eslint src *.js"
   }
 }

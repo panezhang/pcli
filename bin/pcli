@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var program = _interopDefault(require('commander'));
+
+var version = "0.0.1";
+
+/**
+ * @author panezhang
+ * @date 28/12/2017-19:19
+ * @file pcli
+ */
+
+program
+    .version(version)
+    .command('hello', 'Hello World!')
+    .parse(process.argv);

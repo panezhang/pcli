@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var program = _interopDefault(require('commander'));
+var chalk = _interopDefault(require('chalk'));
+
+/**
+ * @author panezhang
+ * @date 29/12/2017-11:40
+ * @file pcli-test
+ */
+
+program
+    .option('-n, --nickname [nickname]', 'set nickname')
+    .parse(process.argv);
+
+console.log(`${chalk.yellow('Hello')} ${chalk.cyan(program.nickname)}!`);

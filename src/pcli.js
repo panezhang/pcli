@@ -5,13 +5,9 @@
  */
 
 import program from 'commander';
-import Package from '../package.json';
-
-program.version(Package.version);
+import {version} from '../package.json';
 
 program
-    .command('hello')
-    .description('Hello World!')
-    .action(() => console.log('Hello World! Cli! You got it!'));
-
-program.parse(process.argv);
+    .version(version)
+    .command('hello', 'Hello World!')
+    .parse(process.argv);
