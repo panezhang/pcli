@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 
 import json from 'rollup-plugin-json';
+import typescript from 'rollup-plugin-typescript';
 
 const resolvePath = (...args) => path.resolve(__dirname, ...args);
 
@@ -17,10 +18,13 @@ export default inputs.map(filename => ({
     input: `src/${filename}`,
 
     output: {
-        file: `bin/${path.basename(filename, '.js')}`,
+        file: `bin/${path.basename(filename, '.ts')}`,
         format: 'cjs',
         banner: '#!/usr/bin/env node'
     },
 
-    plugins: [json()]
+    plugins: [
+        json(),
+        typescript()
+    ]
 }));

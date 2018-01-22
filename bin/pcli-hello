@@ -11,9 +11,7 @@ var chalk = _interopDefault(require('chalk'));
  * @date 29/12/2017-11:40
  * @file pcli-test
  */
-
 program
     .option('-n, --nickname [nickname]', 'set nickname')
     .parse(process.argv);
-
-console.log(`${chalk.yellow('Hello')} ${chalk.cyan(program.nickname)}!`);
+console.log(chalk.yellow('Hello') + " " + chalk.cyan(program.nickname) + "!");

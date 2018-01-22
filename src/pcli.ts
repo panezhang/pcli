@@ -4,10 +4,10 @@
  * @file pcli
  */
 
-import program from 'commander';
+import commander from 'commander';
 import {version} from '../package.json';
 
-program
+commander
     .version(version)
     .command('hello', 'Hello World!')
     .parse(process.argv);

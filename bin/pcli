@@ -12,7 +12,6 @@ var version = "0.0.1";
  * @date 28/12/2017-19:19
  * @file pcli
  */
-
 program
     .version(version)
     .command('hello', 'Hello World!')

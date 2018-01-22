@@ -4,11 +4,11 @@
  * @file pcli-test
  */
 
-import program from 'commander';
+import commander from 'commander';
 import chalk from 'chalk';
 
-program
+commander
     .option('-n, --nickname [nickname]', 'set nickname')
     .parse(process.argv);
 
-console.log(`${chalk.yellow('Hello')} ${chalk.cyan(program.nickname)}!`);
+console.log(`${chalk.yellow('Hello')} ${chalk.cyan(commander.nickname)}!`);
