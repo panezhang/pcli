@@ -3,7 +3,7 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var program = _interopDefault(require('commander'));
+var commander = _interopDefault(require('commander'));
 var chalk = _interopDefault(require('chalk'));
 
 /**
@@ -11,7 +11,7 @@ var chalk = _interopDefault(require('chalk'));
  * @date 29/12/2017-11:40
  * @file pcli-test
  */
-program
+commander
     .option('-n, --nickname [nickname]', 'set nickname')
     .parse(process.argv);
-console.log(chalk.yellow('Hello') + " " + chalk.cyan(program.nickname) + "!");
+console.log(chalk.yellow('Hello') + " " + chalk.cyan(commander.nickname) + "!");

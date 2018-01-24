@@ -2,7 +2,6 @@ src
 rollup.config.js
 
 .idea
-.babelrc
 .editorconfig
-.eslintrc
 .nvmrc
+tslint.json
