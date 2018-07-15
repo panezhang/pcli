@@ -1,6 +1,6 @@
 {
   "name": "@panezhang/cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This repo holds my favorite cli tools.",
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
   },
   "bin": {
     "pcli": "bin/pcli",
-    "pcli-hello": "bin/pcli-hello"
+    "pcli-hello": "bin/pcli-hello",
+    "pcli-ovpn": "bin/pcli-ovpn"
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
