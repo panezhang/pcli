@@ -10,4 +10,5 @@ import {version} from '../package.json';
 commander
     .version(version)
     .command('hello', 'Hello World!')
+    .command('ovpn', 'Make .ovpn files inline')
     .parse(process.argv);

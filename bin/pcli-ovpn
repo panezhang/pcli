@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var path = require('path');
+var fs = require('fs');
+var commander = _interopDefault(require('commander'));
+
+/**
+ * @author panezhang
+ * @date 2018/7/15-18:21
+ * @file pcli-ovpn
+ */
+commander
+    .option('-f, --file [file]', 'src file name')
+    .parse(process.argv);
+var dir = process.cwd();
+var filePath = path.resolve(dir, commander.file);
+var content = fs.readFileSync(filePath).toString();
+var keys = [
+    'ca',
+    'cert',
+    'key'
+];
+function handleKey(text, key) {
+    var regExp = new RegExp(key + "\\s+(\\S+)");
+    var match = text.match(regExp);
+    if (!match)
+        return;
+    var ref = match[0], filename = match[1];
+    var inlineContent = "<" + key + ">\n" + fs.readFileSync(path.resolve(dir, filename)).toString() + "\n</" + key + ">";
+    return text.replace(ref, inlineContent);
+}
+var targetContent = keys.reduce(function (text, key) { return handleKey(text, key); }, content);
+console.log(targetContent);
